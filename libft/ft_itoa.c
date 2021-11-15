@@ -1,30 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 16:05:34 by rmattheo          #+#    #+#             */
-/*   Updated: 2021/11/15 17:18:53 by rmattheo         ###   ########lyon.fr   */
+/*   Created: 2021/11/15 17:31:52 by rmattheo          #+#    #+#             */
+/*   Updated: 2021/11/15 18:55:18 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*d;
-	size_t	i;
+char	*ft_itoa(int n)
+{	
+	long	nb;
+	char	*str;
+	int		i;
 
-	i = ft_strlen(s1) + ft_strlen(s2);
-	d = malloc(sizeof(char) * (i + 1));
-	if (!d)
+	i = 1;
+	nb = n;
+	if (n < 0)
+	{
+		nb = -nb;
+		i++;
+	}
+	while (nb >= 10)
+	{
+		nb /= 10;
+		i++;
+	}
+	nb = n;
+	if (nb < 0)
+		nb = -nb;
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (!str)
 		return (NULL);
-	d[i] = 0;
-	while (*s1)
-		*d++ = *s1++;
-	while (*s2)
-		*d++ = *s2++;
-	return (d - i);
+	str[i] = 0;
+	if (n < 0)
+		str[0] = '-';
+	while (nb >= 10)
+	{
+		str[--i] = nb % 10 + 48;
+		nb /= 10;
+	}
+	str[--i] = nb % 10 + 48;
+	return (str);
 }

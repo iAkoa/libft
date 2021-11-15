@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+         #
+#    By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 16:45:37 by rmattheo          #+#    #+#              #
-#    Updated: 2021/11/14 17:39:41 by pat              ###   ########lyon.fr    #
+#    Updated: 2021/11/15 18:33:55 by rmattheo         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,8 @@ SRCS	=	ft_isalpha.c	\
 			ft_putendl_fd.c	\
 			ft_striteri.c	\
 			ft_split.c		\
+			ft_strjoin.c	\
+			ft_itoa.c		\
 
 OBJS    = ${SRCS:.c=.o}
 

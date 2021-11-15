@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:08 by pat               #+#    #+#             */
-/*   Updated: 2021/11/14 02:24:38 by pat              ###   ########lyon.fr   */
+/*   Updated: 2021/11/15 20:39:59 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-static int ft_s1_cmp_set (char c, char *set)
+static int	ft_s1_cmp_set(char c, char *set)
 {
-	size_t i;
+	size_t	i;
 
-	i  = -1;
+	i = -1;
 	while (set[++i])
 		if (set[i] == c)
 			return (1);
@@ -25,9 +25,9 @@ static int ft_s1_cmp_set (char c, char *set)
 
 }
 
-char    *ft_strtrim (char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char    *d;
+	char	*d;
 	char	*str;
 	size_t	i;
 	size_t	count;
@@ -47,13 +47,9 @@ char    *ft_strtrim (char const *s1, char const *set)
 	d = (char *)malloc(sizeof(char) * (count + 1));
 	if (!d)
 		return (NULL);
-	d[count +1] = '\0';
-	i = 0;
-	
-	while(i < count)
-	{
+	d[count] = '\0';
+	i = -1;
+	while (i++ < count)
 		d[i] = str[i + start];
-		i++;
-	}
 	return (d);
 }
