@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:51:46 by rmattheo          #+#    #+#             */
-/*   Updated: 2021/11/15 18:33:39 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2021/11/16 01:58:13 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	**ft_split(char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_itoa(int n);
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
 
 #endif

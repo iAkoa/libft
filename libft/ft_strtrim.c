@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:08 by pat               #+#    #+#             */
-/*   Updated: 2021/11/15 20:39:59 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2021/11/15 22:57:03 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!d)
 		return (NULL);
 	d[count] = '\0';
-	i = -1;
-	while (i++ < count)
+	i = 0;
+	while (i < count)
+	{
 		d[i] = str[i + start];
+		i++;
+	}
 	return (d);
 }
