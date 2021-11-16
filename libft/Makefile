@@ -6,7 +6,7 @@
 #    By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 16:45:37 by rmattheo          #+#    #+#              #
-#    Updated: 2021/11/15 18:33:55 by rmattheo         ###   ########lyon.fr    #
+#    Updated: 2021/11/16 17:52:40 by rmattheo         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,20 @@ SRCS	=	ft_isalpha.c	\
 			ft_split.c		\
 			ft_strjoin.c	\
 			ft_itoa.c		\
+			ft_lstsize.c	\
+
+SRCS_BONUS	=	ft_lstnew.c			\
+				ft_lstadd_front.c	\
+				ft_lstlast.c		\
+				ft_lstadd_back.c	\
+				ft_lstdelone.c		\
+				ft_lstclear.c		\
+				ft_lstiter.c		\
+				ft_lstmap.c			\
 
 OBJS    = ${SRCS:.c=.o}
+
+OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 
 NAME    = libft.a
 
@@ -61,11 +73,14 @@ HEADER = libft.h
 
 ${NAME}:    ${OBJS}
 		ar r ${NAME} ${OBJS}
+		
+bonus: 	${OBJS} ${OBJS_BONUS}
+		ar r ${NAME} ${OBJS} ${OBJS_BONUS}
 
 all:    ${NAME}
 
 clean:
-		rm -f ${OBJS}
+		rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean:    clean
 		rm -f ${NAME}
