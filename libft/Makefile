@@ -6,7 +6,7 @@
 #    By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 16:45:37 by rmattheo          #+#    #+#              #
-#    Updated: 2021/11/16 17:52:40 by rmattheo         ###   ########lyon.fr    #
+#    Updated: 2021/11/17 20:53:56 by rmattheo         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRCS	=	ft_isalpha.c	\
 			ft_split.c		\
 			ft_strjoin.c	\
 			ft_itoa.c		\
-			ft_lstsize.c	\
+
 
 SRCS_BONUS	=	ft_lstnew.c			\
 				ft_lstadd_front.c	\
@@ -55,6 +55,7 @@ SRCS_BONUS	=	ft_lstnew.c			\
 				ft_lstclear.c		\
 				ft_lstiter.c		\
 				ft_lstmap.c			\
+				ft_lstsize.c	\
 
 OBJS    = ${SRCS:.c=.o}
 
@@ -68,14 +69,14 @@ CFLAGS    = -Wall -Wextra -Werror
 
 HEADER = libft.h
 
-.c.o: ${HEADER} Makefile
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%o : %c ${HEADER} Makefile
+		${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}:    ${OBJS}
-		ar r ${NAME} ${OBJS}
+		ar -rcs ${NAME} ${OBJS}
 		
 bonus: 	${OBJS} ${OBJS_BONUS}
-		ar r ${NAME} ${OBJS} ${OBJS_BONUS}
+		ar -rcs ${NAME} ${OBJS} ${OBJS_BONUS}
 
 all:    ${NAME}
 
@@ -87,4 +88,4 @@ fclean:    clean
 
 re:        fclean all
 
-.PHONY:    all clean fclean re
+.PHONY:    all clean fclean re bonus

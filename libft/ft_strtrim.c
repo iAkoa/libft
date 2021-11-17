@@ -3,55 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:08 by pat               #+#    #+#             */
-/*   Updated: 2021/11/17 15:31:34 by pat              ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 19:07:09 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_s1_cmp_set(char c, char *set)
-{
-	size_t	i;
-
-	i = -1;
-	while (set[++i])
-		if (set[i] == c)
-			return (1);
-	return (0);
-
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*d;
+	size_t	size;
 	char	*str;
-	size_t	i;
-	size_t	count;
-	size_t	start;
 
-	str = (char *)s1;
-	i = 0;
-	start = 0;
-	count = 0;
-	while (ft_s1_cmp_set(str[start], (char *)set) && s1[start])
-		start++;2
-	while (!ft_s1_cmp_set(str[start + i], (char *)set) && s1[start + i])
-	{
-		i++;
-		count++;
-	}
-	d = (char *)malloc(sizeof(char) * (count + 1));
-	if (!d)
+	if (!s1 || !set)
 		return (NULL);
-	d[count] = '\0';
-	i = 0;
-	while (i < count)
-	{
-		d[i] = str[i + start];
-		i++;
-	}
-	return (d);
+	while (ft_strchr(set, *s1) && *s1)
+		s1++;
+	size = ft_strlen(s1);
+	while (size && ft_strchr(set, s1[size]))
+		size--;
+	str = ft_substr(s1, 0, size + 1);
+	return (str);
 }

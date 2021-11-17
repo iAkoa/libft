@@ -6,7 +6,7 @@
 /*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:46:39 by rmattheo          #+#    #+#             */
-/*   Updated: 2021/11/10 19:52:17 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 19:14:00 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*d;
 	size_t	i;
 
+	if (!s && len > 0)
+		return (NULL);
 	i = ft_strlen(&s[start]);
 	if (!s)
 		return (NULL);

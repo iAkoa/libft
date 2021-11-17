@@ -6,13 +6,13 @@
 /*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:30:06 by pat               #+#    #+#             */
-/*   Updated: 2021/11/15 17:51:16 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 17:55:09 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char **freeall(char **str, int n)
+static char	**freeall(char **str, int n)
 {
 	n++;
 	while (n--)
@@ -21,9 +21,9 @@ static char **freeall(char **str, int n)
 	return (0);
 }
 
-static int  wordlen(char const *s, char c)
+static int	wordlen(char const *s, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -31,10 +31,10 @@ static int  wordlen(char const *s, char c)
 	return (i);
 }
 
-static char *ft_strndup(char const *s, size_t size)
+static char	*ft_strndup(char const *s, size_t size)
 {
-	size_t      i;
-	char        *word;
+	size_t	i;
+	char	*word;
 
 	i = 0;
 	word = malloc((sizeof(char) * size) + 1);
@@ -49,9 +49,9 @@ static char *ft_strndup(char const *s, size_t size)
 	return (word);
 }
 
-static int  count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (*s)
@@ -66,12 +66,12 @@ static int  count_word(char const *s, char c)
 	return (count);
 }
 
-char    **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int     i;
-	int     j;
-	int     size;
-	char    **newstring;
+	int		i;
+	int		j;
+	int		size;
+	char	**newstring;
 
 	i = 0;
 	j = -1;
