@@ -6,12 +6,11 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:35:08 by pat               #+#    #+#             */
-/*   Updated: 2021/11/15 22:57:03 by pat              ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 15:31:34 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_s1_cmp_set(char c, char *set)
 {
@@ -38,7 +37,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	count = 0;
 	while (ft_s1_cmp_set(str[start], (char *)set) && s1[start])
-		start++;
+		start++;2
 	while (!ft_s1_cmp_set(str[start + i], (char *)set) && s1[start + i])
 	{
 		i++;

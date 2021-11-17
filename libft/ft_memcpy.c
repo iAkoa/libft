@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 18:17:06 by rmattheo          #+#    #+#             */
-/*   Updated: 2021/11/09 20:25:33 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2021/11/17 11:06:17 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	if (!src && !dest)
 		return (NULL);
 	i = n;
-	while (n-- > 0)
+	while (n--)
 		*(unsigned char *)dest++ = *(unsigned char *)src++;
 	return (dest - i);
 }
