@@ -6,7 +6,7 @@
 #    By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/05 16:45:37 by rmattheo          #+#    #+#              #
-#    Updated: 2021/11/17 20:53:56 by rmattheo         ###   ########lyon.fr    #
+#    Updated: 2021/11/18 15:04:25 by rmattheo         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,8 +44,7 @@ SRCS	=	ft_isalpha.c	\
 			ft_striteri.c	\
 			ft_split.c		\
 			ft_strjoin.c	\
-			ft_itoa.c		\
-
+			ft_itoa.c
 
 SRCS_BONUS	=	ft_lstnew.c			\
 				ft_lstadd_front.c	\
@@ -55,7 +54,7 @@ SRCS_BONUS	=	ft_lstnew.c			\
 				ft_lstclear.c		\
 				ft_lstiter.c		\
 				ft_lstmap.c			\
-				ft_lstsize.c	\
+				ft_lstsize.c	
 
 OBJS    = ${SRCS:.c=.o}
 
